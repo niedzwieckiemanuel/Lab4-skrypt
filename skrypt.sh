@@ -1,11 +1,11 @@
 #!/bin/bash
-if [ "$1" == "--date" ]; then
+if [ "$1" == "--date" ] || [ "$1" == "-d" ]; then
     date
-elif [ "$1" == "--logs" ]; then
+elif [ "$1" == "--logs" ] || [ "$1" == "-l" ]; then
     count=${2:-100}
     for i in $(seq 1 $count); do
         echo -e "Nazwa pliku: log${i}.txt\nSkrypt: $0\nData: $(date)" > log${i}.txt
     done
-elif [ "$1" == "--help" ]; then
-    echo "Dostepne komendy: --date, --logs, --logs [liczba], --help"
+elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+    echo "Dostepne komendy: --date, -d, --logs, -l, --logs [liczba], -l [liczba], --help, -h"
 fi
