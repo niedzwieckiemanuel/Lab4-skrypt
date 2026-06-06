@@ -6,6 +6,10 @@ elif [ "$1" == "--logs" ] || [ "$1" == "-l" ]; then
     for i in $(seq 1 $count); do
         echo -e "Nazwa pliku: log${i}.txt\nSkrypt: $0\nData: $(date)" > log${i}.txt
     done
+elif [ "$1" == "--init" ]; then
+    git clone $(git config --get remote.origin.url) $(pwd)/klon
+    export PATH=$PATH:$(pwd)/klon
+    echo "Sklonowano repozytorium"
 elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
-    echo "Dostepne komendy: --date, -d, --logs, -l, --logs [liczba], -l [liczba], --help, -h"
+    echo "Dostepne komendy: --date, -d, --logs, -l, --help, -h"
 fi
