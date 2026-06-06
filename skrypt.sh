@@ -16,5 +16,5 @@ elif [ "$1" == "--error" ] || [ "$1" == "-e" ]; then
         echo -e "Blad ${i}" > error${i}/error${i}.txt
     done
 elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
-    echo "Dostepne komendy: --date, -d, --logs, -l, --help, -h"
+    echo "Dostepne komendy: --date, -d, --logs, -l, --help, -h, --init, --error, -e"
 fi
